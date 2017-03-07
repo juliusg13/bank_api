@@ -1,0 +1,29 @@
+
+<h1>Listing Users</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Address</th>
+    <th>Date of birth</th>
+  </tr>
+
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.address_line_1 %></td>
+        <td><%= user.dob %></td>
+        <td><%= link_to 'Show', user_path(user) %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user_path(user),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
+
+
+<%= link_to 'Home', controller: 'welcome' %>
+<%= link_to 'Create new client', new_user_path %>
