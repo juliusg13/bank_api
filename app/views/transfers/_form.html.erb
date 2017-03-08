@@ -1,0 +1,42 @@
+<%= form_for([@user, @user.transfers.build]) do |f| %>
+
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@user.errors.count, "error") %> prohibited
+            this user from being saved:
+          </h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+
+    <p>
+      <%= f.label :account_number_from %><br>
+      <%= f.text_field :account_number_from%>
+    </p>
+    <p>
+      <%= f.label :account_number_to %><br>
+      <%= f.text_field :account_number_to %>
+    </p>
+    <p>
+      <%= f.label :'Amount of pennies' %><br>
+      <%= f.text_field :amount_pennies %>
+    </p>
+    <p>
+      <%= f.label :country_code_from %><br>
+      <%= f.text_field :country_code_from %>
+    </p>
+    <p>
+      <%= f.label :country_code_to %><br>
+      <%= f.text_field :country_code_to %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

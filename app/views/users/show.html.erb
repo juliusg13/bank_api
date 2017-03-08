@@ -13,6 +13,15 @@
   <strong>Date:</strong>
   <%= @user.dob %>
 </p>
+<br>
+
+<h2>Add a transfer:</h2>
+<%= render 'transfers/form' %>
+
+<h2>Transfers</h2>
+<%= render @user.transfers %>
+
+
 
 <%= link_to 'Back', users_path %> |
 <%= link_to 'Edit', edit_user_path(@user) %>
