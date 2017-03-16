@@ -58,3 +58,5 @@ gem 'validates_timeliness', '~> 4.0'
 # http://www.rubydoc.info/gems/iso_country_codes/0.7.6
 gem 'iso_country_codes', '~> 0.7.6'
 gem 'sprockets', '~> 4.0.0.beta4'
+gem 'simple_form'
+gem  'bootstrap-sass'

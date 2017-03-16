@@ -1,14 +1,16 @@
 
 <h1>Listing Users</h1>
 
-<table>
+<table class="table table-striped">
+  <thead>
   <tr>
     <th>First name</th>
     <th>Last name</th>
     <th>Address</th>
     <th>Date of birth</th>
   </tr>
-
+  </thead>
+  <tbody class="col-md-12">
   <% @users.each do |user| %>
       <tr>
         <td><%= user.first_name %></td>
@@ -22,6 +24,7 @@
                         data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
+  </tbody>
 </table>
 
 

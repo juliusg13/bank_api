@@ -2,8 +2,17 @@ class TransfersController < ApplicationController
 
 	def create
 		@user = User.find(params[:user_id])
-		@transfer = @user.transfers.create(transfer_params)
-		redirect_to user_path(@user)
+
+		if @user.transfers.create(transfer_params)
+			redirect_to user_path(@user)
+		else
+			render 'users/show'
+		end
+	end
+
+	def new
+		@user = User.find(params[:user_id])
+		@transfer = @user.transfers.new
 	end
 
 	private

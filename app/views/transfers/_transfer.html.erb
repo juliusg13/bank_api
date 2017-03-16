@@ -1,21 +1,23 @@
 
-<table>
-  <tr>
-    <th>Account number from:    </th>
-    <th>Account number to:    </th>
-    <th>Amount of pennies:    </th>
-    <th>Sending country code:    </th>
-    <th>Receiving country code:    </th>
-  </tr>
-
-  <% @user.transfers.each do |transfer| %>
+<table class="table-bordered">
+  <thead>
+    <tr>
+      <th>Account number from:    </th>
+      <th>Account number to:    </th>
+      <th>Amount of pennies:    </th>
+      <th>Sending country code:    </th>
+      <th>Receiving country code:    </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.transfers.each do |transfer| %>
       <tr>
         <td><%= transfer.account_number_to %></td>
         <td><%= transfer.account_number_to %></td>
         <td><%= transfer.amount_pennies %></td>
         <td><%= transfer.country_code_from %></td>
         <td><%= transfer.country_code_to %></td>
-
       </tr>
-  <% end %>
+    <% end %>
+  </tbody>
 </table>
